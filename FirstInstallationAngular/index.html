@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<!--this is the controller-->
+
+<html ng-app="NameCalculator">
+  <head>
+    <meta charset="utf-8">
+    <!--you need always to refence to angular first-->
+    <script src = "angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>My first AngularJs App</title>
+  </head>
+
+  <body>
+
+    <!--With the attribute ng-something we are to bind the controller
+  with the view model -->
+    <h1>My first AngularJS App</h1>
+    <h2>Name calculator</h2>
+
+    <div ng-controller = "calculatorController">
+      Enter your name:<input type"text"
+                      ng-model="name"
+                      ng-keyup="displayNumeric()">
+      <div>
+        Total numeric value of your name is: {{totalValue}}
+      </div>
+    </div>
+  </body>
+</html>
