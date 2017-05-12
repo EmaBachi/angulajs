@@ -13,10 +13,11 @@
     <div ng-controller='VitoController'>
 
       Una breve descrizione della vita dell'avvocato.
-      Questo è quello che accade {{descrizione}}
+      Questo è quello che accade {{descrizione}}<br>
       <img ng-src='{{immagine}}.jpg' height=300 width=400>
       <div>
         <button ng-click="serata()">Scopri cosa succede {{strButton}}</button>
+        {{msg() | uppercase}}
       </div>
 
     </div>
