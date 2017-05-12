@@ -1,7 +1,7 @@
 //Create an entity student with some field
 var student = {
-  name = "",
-  type = "student"
+  name: "",
+  type: "student"
 };
 
 //add to page on content loaded lister.
@@ -28,5 +28,5 @@ function calculateNumericOutput() {
   //now we insert the result int the html page
   var output = "Total numeric value of person's name is "+totalNameValue;
   document.getElementById('output').innerText = output;
-  
+
 }
