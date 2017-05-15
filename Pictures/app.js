@@ -3,11 +3,13 @@
 
   angular.module('VitoApp', [])
 
-  .controller('VitoController', VitoController);
+  .controller('VitoController', VitoController)
+  .filter('loves', LovesFilter);
 
-  VitoController.$inject = ['$scope', '$filter'];
 
-  function VitoController($scope, $filter){
+  VitoController.$inject = ['$scope', 'lovesFilter'];
+
+  function VitoController($scope, lovesFilter){
 
     var primaStr = "prima della serata";
     var dopoStr = "dopo la serata";
@@ -39,5 +41,19 @@
       }
     }
 
+    $scope.sayLoveMessage = function(){
+      var newMsg = msg;
+      newMsg = lovesFilter(newMsg);
+      return newMsg;
+    }
+
+  }
+
+  function LovesFilter() {
+    return function(input){
+      input = input || "";
+      input = input.replace("wow", "Che grande");
+      return input;
+    }
   }
 })();
