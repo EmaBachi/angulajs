@@ -43,7 +43,7 @@
 
     $scope.sayLoveMessage = function(){
       var newMsg = msg;
-      newMsg = lovesFilter(newMsg);
+      newMsg = lovesFilter(newMsg, 'upper');
       return newMsg;
     }
 
