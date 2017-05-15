@@ -26,9 +26,6 @@
     $scope.shoppingListOne = shoppingListOne;
     $scope.shoppingListTwo = shoppingListTwo;
 
-    $scope.newItemName = "";
-    $scope.newItemQuantity = "";
-
     $scope.addItem = function(){
       var item = {
         name: $scope.newItemName,

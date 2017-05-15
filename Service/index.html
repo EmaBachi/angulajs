@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app='BagApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>Service</title>
+    <script src='angular.min.js'></script>
+    <script src='app.js'></script>
+  </head>
+  <body>
+    <h1>Bag's content</h1>
+
+    <div ng-controller='AddController as addController'>
+      <input type='text' ng-model='addController.itemName' placeholder='name' />
+      <input type='text' ng-model='addController.itemQuantity' placeholder='quantity' />
+      <button ng-click='addController.addItem()'>Add Item</button>
+    </div>
+
+    <div ng-controller='ShowController as showController'>
+      <ol>
+        <li ng-repeat='item in showController.items'>
+          {{item.name}}, {{item.quantity}} <button ng-click='showController.removeItem($index)'>Remove Item</button>
+        </li>
+      </ol>
+    </div>
+
+  </body>
+</html>

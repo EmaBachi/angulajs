@@ -12,16 +12,19 @@
 
       <div ng-controller='OnlineStoreController'>
         <p>
+          <input type="text" ng-model='search' placeholder="Search"/>
+        </p>
+        <p>
           First shopping list:
           <ul>
-            <li ng-repeat="item in shoppingListOne">
+            <li ng-repeat="item in shoppingListOne | filter : search">
               {{item}}
             </li>
           </ul>
         </p>
         <p>
           <ul>
-            <li ng-repeat='item in shoppingListTwo'>
+            <li ng-repeat='item in shoppingListTwo | filter : search'>
               Product: {{item.name}}. Quantity: {{item.quantity}}
             </li>
           </ul>
@@ -29,7 +32,7 @@
         <p>
           <input type='text' ng-model='shoppingListTwo[0].quantity' />
           <ul>
-            <li ng-repeat='item in shoppingListTwo'>
+            <li ng-repeat='item in shoppingListTwo | filter : search'>
               {{$index+1}}: {{item.name}}; quantity {{item.quantity}}
             </li>
           </ul>
