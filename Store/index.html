@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app='OnlineStoreApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>Online Store</title>
+    <script src='angular.min.js'></script>
+    <script src='app.js'></script>
+  </head>
+
+  <body>
+      <h1>Online Store</h1>
+
+      <div ng-controller='OnlineStoreController'>
+        <p>
+          First shopping list:
+          <ul>
+            <li ng-repeat="item in shoppingListOne">
+              {{item}}
+            </li>
+          </ul>
+        </p>
+        <p>
+          <ul>
+            <li ng-repeat='item in shoppingListTwo'>
+              Product: {{item.name}}. Quantity: {{item.quantity}}
+            </li>
+          </ul>
+        </p>
+        <p>
+          <input type='text' ng-model='shoppingListTwo[0].quantity' />
+          <ul>
+            <li ng-repeat='item in shoppingListTwo'>
+              {{$index+1}}: {{item.name}}; quantity {{item.quantity}}
+            </li>
+          </ul>
+        </p>
+        <p>
+          <input type="text" ng-model="newItemName" placeholder="item name" />
+          <input type="text" ng-model="newItemQuantity" placeholder="item quantity" />
+          <button ng-click="addItem()">Add Item</button>
+        </p>
+
+      </div>
+
+  </body>
+
+</html>
