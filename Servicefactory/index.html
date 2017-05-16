@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app='FactoryApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>Serivce Factory</title>
+    <script src='angular.min.js'></script>
+    <script src='app.js'></script>
+  </head>
+
+  <body>
+      <h1>Service Factory</h1>
+
+      <div ng-controller='ShoppingListOneController as listOne'>
+        <h2>Shopping List One</h2>
+
+        <input type="text" placeholder="item name" ng-model='listOne.itemName' />
+        <input type="text" placeholder="item quantity" ng-model='listOne.itemQuantity' />
+        <button ng-click='listOne.addItem();'>Add item</button>
+
+        <ol>
+          <li ng-repeat="item in listOne.items">
+            {{item.name}}, {{item.quantity}}, <button ng-click='listOne.removeItem($index);'>Remove item</button>
+          </li>
+        </ol>
+
+        <p>
+          Error:
+        </p>
+
+      </div>
+
+      <div ng-controller='ShoppingListTwoController as listTwo'>
+        <h2>Shooping List Two</h2>
+
+        <input type="text" placeholder="item name" ng-model='listTwo.itemName' />
+        <input type="text" placeholder="item quantity" ng-model='listTwo.itemQuantity' />
+        <button ng-click='listTwo.addItem();'>Add item</button>
+
+        <ol>
+          <li ng-repeat='item in listTwo.items'>
+            {{item.name}}, {{item.quantity}}, <button ng-click='listTwo.removeItem($index);'>Remove item</button>
+          </li>
+        </ol>
+
+        <p>
+          Error:
+        </p>
+
+      </div>
+  </body>
+</html>
